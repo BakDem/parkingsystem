@@ -14,12 +14,23 @@ import com.parkit.parkingsystem.constants.ParkingType;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 
+/**
+ * @author cisse
+ *
+ *         The class TicketDAO is a Data Access Object class
+ */
 public class TicketDAO {
 
 	private static final Logger logger = LogManager.getLogger("TicketDAO");
 
 	public DataBaseConfig dataBaseConfig = new DataBaseConfig();
 
+	/**
+	 * @param ticket
+	 * @return
+	 * 
+	 *         this method allows for saving a ticket into the Data Base
+	 */
 	public boolean saveTicket(Ticket ticket) {
 		Connection con = null;
 		try {
@@ -41,6 +52,12 @@ public class TicketDAO {
 		}
 	}
 
+	/**
+	 * @param vehicleRegNumber
+	 * @return
+	 * 
+	 *         this method allows for getting a ticket from the Data Base
+	 */
 	public Ticket getTicket(String vehicleRegNumber) {
 		Connection con = null;
 		Ticket ticket = null;
@@ -70,6 +87,12 @@ public class TicketDAO {
 		}
 	}
 
+	/**
+	 * @param ticket
+	 * @return
+	 * 
+	 *         this method allows for updating a ticket into the Data Base
+	 */
 	public boolean updateTicket(Ticket ticket) {
 		Connection con = null;
 		try {
@@ -88,6 +111,13 @@ public class TicketDAO {
 		return false;
 	}
 
+	/**
+	 * @param vehicleRegNumber
+	 * @return
+	 * 
+	 *         this method allows for getting the recurrence of a vehicle (how many
+	 *         time the actual vehicle were in a parking).
+	 */
 	public int getReccurence(String vehicleRegNumber) {
 		Connection con = null;
 		int result = -1;

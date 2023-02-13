@@ -1,0 +1,1149 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		</p>
+      <p>SpotBugs version: 4.7.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>C:\Users\cisse\OneDrive\Bureau\env\myworkspace\parkingsystem</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>0 lines of code analyzed,
+	in 0 classes, 
+	in 8 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">6</td>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">31</td>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Low Priority Warnings</td>
+            <td align="right">9</td>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>46</b>
+            </td>
+            <td align="right">
+               <b>0.00</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_I18N">Internationalization Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">7</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+            </td>
+            <td align="right">10</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_I18N">Internationalization Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">6</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">20</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>46</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e4');">
+            <td>
+               <span class="priority-1">DMI</span>
+            </td>
+            <td>Random object created and used only once in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTime()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e4" style="display: none;">
+                  <a href="#DMI_RANDOM_USED_ONLY_ONCE">Bug type DMI_RANDOM_USED_ONLY_ONCE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTime()<br/>Called method java.util.Random.nextInt(int)<br/>At FareCalculatorServiceTest.java:[line 97]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e19');">
+            <td>
+               <span class="priority-1">DMI</span>
+            </td>
+            <td>Random object created and used only once in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTimeWithFivePercentDiscount()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e19" style="display: none;">
+                  <a href="#DMI_RANDOM_USED_ONLY_ONCE">Bug type DMI_RANDOM_USED_ONLY_ONCE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTimeWithFivePercentDiscount()<br/>Called method java.util.Random.nextInt(int)<br/>At FareCalculatorServiceTest.java:[line 220]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e34');">
+            <td>
+               <span class="priority-1">DMI</span>
+            </td>
+            <td>Random object created and used only once in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTime()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e34" style="display: none;">
+                  <a href="#DMI_RANDOM_USED_ONLY_ONCE">Bug type DMI_RANDOM_USED_ONLY_ONCE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTime()<br/>Called method java.util.Random.nextInt(int)<br/>At FareCalculatorServiceTest.java:[line 114]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e49');">
+            <td>
+               <span class="priority-1">DMI</span>
+            </td>
+            <td>Random object created and used only once in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTimeWithFivePercentDiscount()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e49" style="display: none;">
+                  <a href="#DMI_RANDOM_USED_ONLY_ONCE">Bug type DMI_RANDOM_USED_ONLY_ONCE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTimeWithFivePercentDiscount()<br/>Called method java.util.Random.nextInt(int)<br/>At FareCalculatorServiceTest.java:[line 238]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e533');">
+            <td>
+               <span class="priority-2">ODR</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.saveTicket(Ticket) may fail to close PreparedStatement</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e533" style="display: none;">
+                  <a href="#ODR_OPEN_DATABASE_RESOURCE">Bug type ODR_OPEN_DATABASE_RESOURCE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.saveTicket(Ticket)<br/>Need to close java.sql.PreparedStatement <br/>At TicketDAO.java:[line 38]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e549');">
+            <td>
+               <span class="priority-2">ODR</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.updateTicket(Ticket) may fail to close PreparedStatement</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e549" style="display: none;">
+                  <a href="#ODR_OPEN_DATABASE_RESOURCE">Bug type ODR_OPEN_DATABASE_RESOURCE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.updateTicket(Ticket)<br/>Need to close java.sql.PreparedStatement <br/>At TicketDAO.java:[line 100]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e657');">
+            <td>
+               <span class="priority-2">ODR</span>
+            </td>
+            <td>com.parkit.parkingsystem.integration.service.DataBasePrepareService.clearDataBaseEntries() may fail to close PreparedStatement</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e657" style="display: none;">
+                  <a href="#ODR_OPEN_DATABASE_RESOURCE">Bug type ODR_OPEN_DATABASE_RESOURCE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.integration.service.DataBasePrepareService<br/>In method com.parkit.parkingsystem.integration.service.DataBasePrepareService.clearDataBaseEntries()<br/>Need to close java.sql.PreparedStatement <br/>At DataBasePrepareService.java:[line 17]<br/>Another occurrence at DataBasePrepareService.java:[line 20]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_EXPERIMENTAL">Experimental Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e205');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSpot(ParkingType) may fail to clean up java.sql.ResultSet on checked exception</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e205" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.ParkingSpotDAO<br/>In method com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSpot(ParkingType)<br/>Reference type java.sql.ResultSet<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at ParkingSpotDAO.java:[line 38] is not discharged<br/>Path continues at ParkingSpotDAO.java:[line 39]<br/>Path continues at ParkingSpotDAO.java:[line 45]<br/>Path continues at ParkingSpotDAO.java:[line 46]<br/>Path continues at ParkingSpotDAO.java:[line 48]<br/>Path continues at ParkingSpotDAO.java:[line 50]<br/>Remaining obligations: {Statement x 1,ResultSet x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e236');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSpot(ParkingType) may fail to clean up java.sql.Statement on checked exception</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e236" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.ParkingSpotDAO<br/>In method com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSpot(ParkingType)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at ParkingSpotDAO.java:[line 36] is not discharged<br/>Path continues at ParkingSpotDAO.java:[line 37]<br/>Path continues at ParkingSpotDAO.java:[line 38]<br/>Path continues at ParkingSpotDAO.java:[line 39]<br/>Path continues at ParkingSpotDAO.java:[line 45]<br/>Path continues at ParkingSpotDAO.java:[line 46]<br/>Path continues at ParkingSpotDAO.java:[line 48]<br/>Path continues at ParkingSpotDAO.java:[line 50]<br/>Remaining obligations: {Statement x 1,ResultSet x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e271');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.ParkingSpotDAO.updateParking(ParkingSpot) may fail to clean up java.sql.Statement on checked exception</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e271" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.ParkingSpotDAO<br/>In method com.parkit.parkingsystem.dao.ParkingSpotDAO.updateParking(ParkingSpot)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at ParkingSpotDAO.java:[line 65] is not discharged<br/>Path continues at ParkingSpotDAO.java:[line 66]<br/>Path continues at ParkingSpotDAO.java:[line 71]<br/>Path continues at ParkingSpotDAO.java:[line 72]<br/>Path continues at ParkingSpotDAO.java:[line 75]<br/>Path continues at ParkingSpotDAO.java:[line 73]<br/>Remaining obligations: {Statement x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e326');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.saveTicket(Ticket) may fail to clean up java.sql.Statement</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e326" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.saveTicket(Ticket)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at TicketDAO.java:[line 38] is not discharged<br/>Path continues at TicketDAO.java:[line 41]<br/>Path continues at TicketDAO.java:[line 42]<br/>Path continues at TicketDAO.java:[line 43]<br/>Path continues at TicketDAO.java:[line 44]<br/>Path continues at TicketDAO.java:[line 45]<br/>Path continues at TicketDAO.java:[line 46]<br/>Path continues at TicketDAO.java:[line 50]<br/>Path continues at TicketDAO.java:[line 51]<br/>Remaining obligations: {Statement x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e364');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.updateTicket(Ticket) may fail to clean up java.sql.Statement</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e364" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.updateTicket(Ticket)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at TicketDAO.java:[line 100] is not discharged<br/>Path continues at TicketDAO.java:[line 101]<br/>Path continues at TicketDAO.java:[line 102]<br/>Path continues at TicketDAO.java:[line 103]<br/>Path continues at TicketDAO.java:[line 104]<br/>Path continues at TicketDAO.java:[line 109]<br/>Path continues at TicketDAO.java:[line 105]<br/>Remaining obligations: {Statement x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e397');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.getReccurence(String) may fail to clean up java.sql.ResultSet on checked exception</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e397" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.getReccurence(String)<br/>Reference type java.sql.ResultSet<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at TicketDAO.java:[line 128] is not discharged<br/>Path continues at TicketDAO.java:[line 129]<br/>Path continues at TicketDAO.java:[line 135]<br/>Path continues at TicketDAO.java:[line 136]<br/>Path continues at TicketDAO.java:[line 138]<br/>Path continues at TicketDAO.java:[line 140]<br/>Remaining obligations: {Statement x 1,ResultSet x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e428');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.getReccurence(String) may fail to clean up java.sql.Statement on checked exception</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e428" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.getReccurence(String)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at TicketDAO.java:[line 126] is not discharged<br/>Path continues at TicketDAO.java:[line 127]<br/>Path continues at TicketDAO.java:[line 128]<br/>Path continues at TicketDAO.java:[line 129]<br/>Path continues at TicketDAO.java:[line 135]<br/>Path continues at TicketDAO.java:[line 136]<br/>Path continues at TicketDAO.java:[line 138]<br/>Path continues at TicketDAO.java:[line 140]<br/>Remaining obligations: {Statement x 1,ResultSet x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e463');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.getTicket(String) may fail to clean up java.sql.ResultSet on checked exception</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e463" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.getTicket(String)<br/>Reference type java.sql.ResultSet<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at TicketDAO.java:[line 69] is not discharged<br/>Path continues at TicketDAO.java:[line 70]<br/>Path continues at TicketDAO.java:[line 82]<br/>Path continues at TicketDAO.java:[line 83]<br/>Path continues at TicketDAO.java:[line 84]<br/>Path continues at TicketDAO.java:[line 85]<br/>Path continues at TicketDAO.java:[line 86]<br/>Remaining obligations: {Statement x 1,ResultSet x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e496');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.dao.TicketDAO.getTicket(String) may fail to clean up java.sql.Statement on checked exception</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e496" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Bug type OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.getTicket(String)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at TicketDAO.java:[line 66] is not discharged<br/>Path continues at TicketDAO.java:[line 68]<br/>Path continues at TicketDAO.java:[line 69]<br/>Path continues at TicketDAO.java:[line 70]<br/>Path continues at TicketDAO.java:[line 82]<br/>Path continues at TicketDAO.java:[line 83]<br/>Path continues at TicketDAO.java:[line 84]<br/>Path continues at TicketDAO.java:[line 85]<br/>Path continues at TicketDAO.java:[line 86]<br/>Remaining obligations: {Statement x 1,ResultSet x 1}</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e626');">
+            <td>
+               <span class="priority-2">OBL</span>
+            </td>
+            <td>com.parkit.parkingsystem.integration.service.DataBasePrepareService.clearDataBaseEntries() may fail to clean up java.sql.Statement</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e626" style="display: none;">
+                  <a href="#OBL_UNSATISFIED_OBLIGATION">Bug type OBL_UNSATISFIED_OBLIGATION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.integration.service.DataBasePrepareService<br/>In method com.parkit.parkingsystem.integration.service.DataBasePrepareService.clearDataBaseEntries()<br/>Reference type java.sql.Statement<br/>2 instances of obligation remaining<br/>Obligation to clean up resource created at DataBasePrepareService.java:[line 17] is not discharged<br/>Path continues at DataBasePrepareService.java:[line 20]<br/>Obligation to clean up resource created at DataBasePrepareService.java:[line 20] is not discharged<br/>Path continues at DataBasePrepareService.java:[line 22]<br/>Path continues at DataBasePrepareService.java:[line 25]<br/>Path continues at DataBasePrepareService.java:[line 27]<br/>Remaining obligations: {Statement x 2}</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_I18N">Internationalization Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e840');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in com.parkit.parkingsystem.util.InputReaderUtil.&lt;static initializer for InputReaderUtil&gt;(): new java.util.Scanner(InputStream)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e840" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.util.InputReaderUtil<br/>In method com.parkit.parkingsystem.util.InputReaderUtil.&lt;static initializer for InputReaderUtil&gt;()<br/>Called method new java.util.Scanner(InputStream)<br/>At InputReaderUtil.java:[line 13]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e687');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>com.parkit.parkingsystem.model.Ticket.getInTime() may expose internal representation by returning Ticket.inTime</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e687" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.model.Ticket<br/>In method com.parkit.parkingsystem.model.Ticket.getInTime()<br/>Field com.parkit.parkingsystem.model.Ticket.inTime<br/>At Ticket.java:[line 76]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e703');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>com.parkit.parkingsystem.model.Ticket.getOutTime() may expose internal representation by returning Ticket.outTime</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e703" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.model.Ticket<br/>In method com.parkit.parkingsystem.model.Ticket.getOutTime()<br/>Field com.parkit.parkingsystem.model.Ticket.outTime<br/>At Ticket.java:[line 90]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e719');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>com.parkit.parkingsystem.model.Ticket.getParkingSpot() may expose internal representation by returning Ticket.parkingSpot</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e719" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.model.Ticket<br/>In method com.parkit.parkingsystem.model.Ticket.getParkingSpot()<br/>Field com.parkit.parkingsystem.model.Ticket.parkingSpot<br/>At Ticket.java:[line 34]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e735');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>com.parkit.parkingsystem.model.Ticket.setInTime(Date) may expose internal representation by storing an externally mutable object into Ticket.inTime</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e735" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.model.Ticket<br/>In method com.parkit.parkingsystem.model.Ticket.setInTime(Date)<br/>Field com.parkit.parkingsystem.model.Ticket.inTime<br/>Local variable named inTime<br/>At Ticket.java:[line 83]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e753');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>com.parkit.parkingsystem.model.Ticket.setOutTime(Date) may expose internal representation by storing an externally mutable object into Ticket.outTime</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e753" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.model.Ticket<br/>In method com.parkit.parkingsystem.model.Ticket.setOutTime(Date)<br/>Field com.parkit.parkingsystem.model.Ticket.outTime<br/>Local variable named outTime<br/>At Ticket.java:[line 97]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e771');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>com.parkit.parkingsystem.model.Ticket.setParkingSpot(ParkingSpot) may expose internal representation by storing an externally mutable object into Ticket.parkingSpot</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e771" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.model.Ticket<br/>In method com.parkit.parkingsystem.model.Ticket.setParkingSpot(ParkingSpot)<br/>Field com.parkit.parkingsystem.model.Ticket.parkingSpot<br/>Local variable named parkingSpot<br/>At Ticket.java:[line 41]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e193');">
+            <td>
+               <span class="priority-2">Dm</span>
+            </td>
+            <td>Hardcoded constant database password in com.parkit.parkingsystem.config.DataBaseConfig.getConnection()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e193" style="display: none;">
+                  <a href="#DMI_CONSTANT_DB_PASSWORD">Bug type DMI_CONSTANT_DB_PASSWORD (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.config.DataBaseConfig<br/>In method com.parkit.parkingsystem.config.DataBaseConfig.getConnection()<br/>At DataBaseConfig.java:[line 34]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e614');">
+            <td>
+               <span class="priority-2">Dm</span>
+            </td>
+            <td>Hardcoded constant database password in com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e614" style="display: none;">
+                  <a href="#DMI_CONSTANT_DB_PASSWORD">Bug type DMI_CONSTANT_DB_PASSWORD (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.integration.config.DataBaseTestConfig<br/>In method com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection()<br/>At DataBaseTestConfig.java:[line 29]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e789');">
+            <td>
+               <span class="priority-3">DB</span>
+            </td>
+            <td>com.parkit.parkingsystem.service.FareCalculatorService.calculateFare(Ticket, int) uses the same code for two switch clauses</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e789" style="display: none;">
+                  <a href="#DB_DUPLICATE_SWITCH_CLAUSES">Bug type DB_DUPLICATE_SWITCH_CLAUSES (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.service.FareCalculatorService<br/>In method com.parkit.parkingsystem.service.FareCalculatorService.calculateFare(Ticket, int)<br/>At FareCalculatorService.java:[lines 58-59]<br/>At FareCalculatorService.java:[lines 62-63]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e804');">
+            <td>
+               <span class="priority-3">DB</span>
+            </td>
+            <td>com.parkit.parkingsystem.service.FareCalculatorService.calculateFare(Ticket, int) uses the same code for two switch clauses</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e804" style="display: none;">
+                  <a href="#DB_DUPLICATE_SWITCH_CLAUSES">Bug type DB_DUPLICATE_SWITCH_CLAUSES (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.service.FareCalculatorService<br/>In method com.parkit.parkingsystem.service.FareCalculatorService.calculateFare(Ticket, int)<br/>At FareCalculatorService.java:[lines 120-121]<br/>At FareCalculatorService.java:[lines 124-125]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e64');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Integral division result cast to double or float in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTime()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e64" style="display: none;">
+                  <a href="#ICAST_IDIV_CAST_TO_DOUBLE">Bug type ICAST_IDIV_CAST_TO_DOUBLE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTime()<br/>At FareCalculatorServiceTest.java:[line 108]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e76');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Integral division result cast to double or float in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTimeWithFivePercentDiscount()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e76" style="display: none;">
+                  <a href="#ICAST_IDIV_CAST_TO_DOUBLE">Bug type ICAST_IDIV_CAST_TO_DOUBLE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTimeWithFivePercentDiscount()<br/>At FareCalculatorServiceTest.java:[line 231]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e88');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Integral division result cast to double or float in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTime()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e88" style="display: none;">
+                  <a href="#ICAST_IDIV_CAST_TO_DOUBLE">Bug type ICAST_IDIV_CAST_TO_DOUBLE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTime()<br/>At FareCalculatorServiceTest.java:[line 125]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e100');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Integral division result cast to double or float in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTimeWithFivePercentDiscount()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e100" style="display: none;">
+                  <a href="#ICAST_IDIV_CAST_TO_DOUBLE">Bug type ICAST_IDIV_CAST_TO_DOUBLE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTimeWithFivePercentDiscount()<br/>At FareCalculatorServiceTest.java:[line 249]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e112');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Result of integer multiplication cast to long in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTime()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e112" style="display: none;">
+                  <a href="#ICAST_INTEGER_MULTIPLY_CAST_TO_LONG">Bug type ICAST_INTEGER_MULTIPLY_CAST_TO_LONG (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTime()<br/>At FareCalculatorServiceTest.java:[line 99]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e124');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Result of integer multiplication cast to long in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTimeWithFivePercentDiscount()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e124" style="display: none;">
+                  <a href="#ICAST_INTEGER_MULTIPLY_CAST_TO_LONG">Bug type ICAST_INTEGER_MULTIPLY_CAST_TO_LONG (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareBikeWithLessThanOneHourParkingTimeWithFivePercentDiscount()<br/>At FareCalculatorServiceTest.java:[line 222]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e137');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Result of integer multiplication cast to long in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTime()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e137" style="display: none;">
+                  <a href="#ICAST_INTEGER_MULTIPLY_CAST_TO_LONG">Bug type ICAST_INTEGER_MULTIPLY_CAST_TO_LONG (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTime()<br/>At FareCalculatorServiceTest.java:[line 116]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e149');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Result of integer multiplication cast to long in com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTimeWithFivePercentDiscount()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e149" style="display: none;">
+                  <a href="#ICAST_INTEGER_MULTIPLY_CAST_TO_LONG">Bug type ICAST_INTEGER_MULTIPLY_CAST_TO_LONG (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.FareCalculatorServiceTest<br/>In method com.parkit.parkingsystem.FareCalculatorServiceTest.calculateFareCarWithLessThanOneHourParkingTimeWithFivePercentDiscount()<br/>At FareCalculatorServiceTest.java:[line 240]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e818');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>Integral division result cast to double or float in com.parkit.parkingsystem.service.FareCalculatorService.calculateFare(Ticket, int)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e818" style="display: none;">
+                  <a href="#ICAST_IDIV_CAST_TO_DOUBLE">Bug type ICAST_IDIV_CAST_TO_DOUBLE (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.service.FareCalculatorService<br/>In method com.parkit.parkingsystem.service.FareCalculatorService.calculateFare(Ticket, int)<br/>At FareCalculatorService.java:[line 43]<br/>Another occurrence at FareCalculatorService.java:[line 44]<br/>Another occurrence at FareCalculatorService.java:[line 48]<br/>Another occurrence at FareCalculatorService.java:[line 49]<br/>Another occurrence at FareCalculatorService.java:[line 107]<br/>Another occurrence at FareCalculatorService.java:[line 111]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e302');">
+            <td>
+               <span class="priority-3">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSpot(ParkingType)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e302" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.ParkingSpotDAO<br/>In method com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSpot(ParkingType)<br/>At ParkingSpotDAO.java:[line 45]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e314');">
+            <td>
+               <span class="priority-3">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in com.parkit.parkingsystem.dao.ParkingSpotDAO.updateParking(ParkingSpot)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e314" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.ParkingSpotDAO<br/>In method com.parkit.parkingsystem.dao.ParkingSpotDAO.updateParking(ParkingSpot)<br/>At ParkingSpotDAO.java:[line 71]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e565');">
+            <td>
+               <span class="priority-3">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in com.parkit.parkingsystem.dao.TicketDAO.getReccurence(String)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e565" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.getReccurence(String)<br/>At TicketDAO.java:[line 135]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e577');">
+            <td>
+               <span class="priority-3">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in com.parkit.parkingsystem.dao.TicketDAO.getTicket(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e577" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.getTicket(String)<br/>At TicketDAO.java:[line 82]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e589');">
+            <td>
+               <span class="priority-3">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in com.parkit.parkingsystem.dao.TicketDAO.saveTicket(Ticket)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e589" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.saveTicket(Ticket)<br/>At TicketDAO.java:[line 47]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e601');">
+            <td>
+               <span class="priority-3">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in com.parkit.parkingsystem.dao.TicketDAO.updateTicket(Ticket)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e601" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.dao.TicketDAO<br/>In method com.parkit.parkingsystem.dao.TicketDAO.updateTicket(Ticket)<br/>At TicketDAO.java:[line 106]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e675');">
+            <td>
+               <span class="priority-3">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in com.parkit.parkingsystem.integration.service.DataBasePrepareService.clearDataBaseEntries()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e675" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.integration.service.DataBasePrepareService<br/>In method com.parkit.parkingsystem.integration.service.DataBasePrepareService.clearDataBaseEntries()<br/>At DataBasePrepareService.java:[line 22]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e161');">
+            <td>
+               <span class="priority-1">ST</span>
+            </td>
+            <td>Write to static field com.parkit.parkingsystem.ParkinSpotDAOTest.parkingSpotDAO from instance method com.parkit.parkingsystem.ParkinSpotDAOTest.setUp()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e161" style="display: none;">
+                  <a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Bug type ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.ParkinSpotDAOTest<br/>In method com.parkit.parkingsystem.ParkinSpotDAOTest.setUp()<br/>Field com.parkit.parkingsystem.ParkinSpotDAOTest.parkingSpotDAO<br/>At ParkinSpotDAOTest.java:[line 43]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e177');">
+            <td>
+               <span class="priority-2">ST</span>
+            </td>
+            <td>Write to static field com.parkit.parkingsystem.ParkingServiceTest.parkingService from instance method com.parkit.parkingsystem.ParkingServiceTest.setUpPerTest()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e177" style="display: none;">
+                  <a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Bug type ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD (click for details)</a>
+                  <br/>In class com.parkit.parkingsystem.ParkingServiceTest<br/>In method com.parkit.parkingsystem.ParkingServiceTest.setUpPerTest()<br/>Field com.parkit.parkingsystem.ParkingServiceTest.parkingService<br/>At ParkingServiceTest.java:[line 56]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="DB_DUPLICATE_SWITCH_CLAUSES">DB_DUPLICATE_SWITCH_CLAUSES: Method uses the same code for two switch clauses</a>
+      </h2>
+      
+      <p>
+      This method uses the same code to implement two clauses of a switch statement.
+    This could be a case of duplicate code, but it might also indicate
+    a coding mistake.
+      </p>
+      
+   <h2>
+         <a name="DMI_RANDOM_USED_ONLY_ONCE">DMI_RANDOM_USED_ONLY_ONCE: Random object created and used only once</a>
+      </h2>
+
+<p> This code creates a java.util.Random object, uses it to generate one random number, and then discards
+the Random object. This produces mediocre quality random numbers and is inefficient.
+If possible, rewrite the code so that the Random object is created once and saved, and each time a new random number
+is required invoke a method on the existing Random object to obtain it.
+</p>
+
+<p>If it is important that the generated Random numbers not be guessable, you <em>must</em> not create a new Random for each random
+number; the values are too easily guessable. You should strongly consider using a java.security.SecureRandom instead
+(and avoid allocating a new SecureRandom for each random number needed).
+</p>
+
+    <h2>
+         <a name="DMI_CONSTANT_DB_PASSWORD">DMI_CONSTANT_DB_PASSWORD: Hardcoded constant database password</a>
+      </h2>
+      
+    <p>This code creates a database connect using a hardcoded, constant password. Anyone with access to either the source code or the compiled code can
+    easily learn the password.
+</p>
+
+
+    <h2>
+         <a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+      </h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion,
+and will assume that the default platform encoding is suitable. This will cause the application
+behavior to vary between platforms. Use an alternative API and specify a charset name or Charset
+object explicitly.</p>
+
+      <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="ICAST_IDIV_CAST_TO_DOUBLE">ICAST_IDIV_CAST_TO_DOUBLE: Integral division result cast to double or float</a>
+      </h2>
+
+<p>
+This code casts the result of an integral division (e.g., int or long division)
+operation to double or float.
+Doing division on integers truncates the result
+to the integer value closest to zero. The fact that the result
+was cast to double suggests that this precision should have been retained.
+What was probably meant was to cast one or both of the operands to
+double <em>before</em> performing the division.  Here is an example:
+</p>
+<pre><code>int x = 2;
+int y = 5;
+// Wrong: yields result 0.0
+double value1 = x / y;
+
+// Right: yields result 0.4
+double value2 = x / (double) y;
+</code></pre>
+
+    <h2>
+         <a name="ICAST_INTEGER_MULTIPLY_CAST_TO_LONG">ICAST_INTEGER_MULTIPLY_CAST_TO_LONG: Result of integer multiplication cast to long</a>
+      </h2>
+
+<p>
+This code performs integer multiply and then converts the result to a long,
+as in:</p>
+<pre><code>long convertDaysToMilliseconds(int days) { return 1000*3600*24*days; }
+</code></pre>
+<p>
+If the multiplication is done using long arithmetic, you can avoid
+the possibility that the result will overflow. For example, you
+could fix the above code to:</p>
+<pre><code>long convertDaysToMilliseconds(int days) { return 1000L*3600*24*days; }
+</code></pre>
+<p>
+or
+</p>
+<pre><code>static final long MILLISECONDS_PER_DAY = 24L*3600*1000;
+long convertDaysToMilliseconds(int days) { return days * MILLISECONDS_PER_DAY; }
+</code></pre>
+
+    <h2>
+         <a name="OBL_UNSATISFIED_OBLIGATION">OBL_UNSATISFIED_OBLIGATION: Method may fail to clean up stream or resource</a>
+      </h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          For sending feedback, check:
+          </p>
+          <ul>
+            <li><a href="https://github.com/spotbugs/spotbugs/blob/master/.github/CONTRIBUTING.md">contributing guideline</a></li>
+            <li><a href="https://github.com/spotbugs/discuss/issues?q=">mailinglist</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>
+          (<a href="https://people.eecs.berkeley.edu/~necula/Papers/rte_oopsla04.pdf">PDF</a>),
+          for a description of the analysis technique.
+          </p>
+          
+      <h2>
+         <a name="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE: Method may fail to clean up stream or resource on checked exception</a>
+      </h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          For sending feedback, check:
+          </p>
+          <ul>
+            <li><a href="https://github.com/spotbugs/spotbugs/blob/master/.github/CONTRIBUTING.md">contributing guideline</a></li>
+            <li><a href="https://github.com/spotbugs/discuss/issues?q=">mailinglist</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>
+          (<a href="https://people.eecs.berkeley.edu/~necula/Papers/rte_oopsla04.pdf">PDF</a>),
+          for a description of the analysis technique.
+          </p>
+          
+      <h2>
+         <a name="ODR_OPEN_DATABASE_RESOURCE">ODR_OPEN_DATABASE_RESOURCE: Method may fail to close database resource</a>
+      </h2>
+
+<p> The method creates a database resource (such as a database connection
+or row set), does not assign it to any
+fields, pass it to other methods, or return it, and does not appear to close
+the object on all paths out of the method.&nbsp; Failure to
+close database resources on all paths out of a method may
+result in poor performance, and could cause the application to
+have problems communicating with the database.
+</p>
+
+    <h2>
+         <a name="REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION: Exception is caught when Exception is not thrown</a>
+      </h2>
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+<pre><code>try {
+    ...
+} catch (RuntimeException e) {
+    throw e;
+} catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+}
+</code></pre>
+  
+     <h2>
+         <a name="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method</a>
+      </h2>
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    </body>
+</html>

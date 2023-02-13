@@ -2,51 +2,81 @@ package com.parkit.parkingsystem.model;
 
 import com.parkit.parkingsystem.constants.ParkingType;
 
+/**
+ * @author cisse
+ *
+ *         ParkingSpot is the parking spot DAO model
+ */
 public class ParkingSpot {
-    private int number;
-    private ParkingType parkingType;
-    private boolean isAvailable;
+	private int number;
+	private ParkingType parkingType;
+	private boolean isAvailable;
 
-    public ParkingSpot(int number, ParkingType parkingType, boolean isAvailable) {
-        this.number = number;
-        this.parkingType = parkingType;
-        this.isAvailable = isAvailable;
-    }
+	/**
+	 * @param number
+	 * @param parkingType
+	 * @param isAvailable
+	 */
+	public ParkingSpot(int number, ParkingType parkingType, boolean isAvailable) {
+		this.number = number;
+		this.parkingType = parkingType;
+		this.isAvailable = isAvailable;
+	}
 
-    public int getId() {
-        return number;
-    }
+	/**
+	 * @return the number
+	 */
+	public int getId() {
+		return number;
+	}
 
-    public void setId(int number) {
-        this.number = number;
-    }
+	/**
+	 * @param number : the number to set
+	 */
+	public void setId(int number) {
+		this.number = number;
+	}
 
-    public ParkingType getParkingType() {
-        return parkingType;
-    }
+	/**
+	 * @return the parkingType
+	 */
+	public ParkingType getParkingType() {
+		return parkingType;
+	}
 
-    public void setParkingType(ParkingType parkingType) {
-        this.parkingType = parkingType;
-    }
+	/**
+	 * @param parkingType : the parkingType to set
+	 */
+	public void setParkingType(ParkingType parkingType) {
+		this.parkingType = parkingType;
+	}
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
+	/**
+	 * @return à boolean : true or false
+	 */
+	public boolean isAvailable() {
+		return isAvailable;
+	}
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
+	/**
+	 * @param available : set the boolean value
+	 */
+	public void setAvailable(boolean available) {
+		isAvailable = available;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ParkingSpot that = (ParkingSpot) o;
-        return number == that.number;
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		ParkingSpot that = (ParkingSpot) o;
+		return number == that.number;
+	}
 
-    @Override
-    public int hashCode() {
-        return number;
-    }
+	@Override
+	public int hashCode() {
+		return number;
+	}
 }

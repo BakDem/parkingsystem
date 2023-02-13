@@ -22,6 +22,10 @@ import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.service.ParkingService;
 import com.parkit.parkingsystem.util.InputReaderUtil;
 
+/**
+ * @author cisse ***this class ParkingServiceTest are the basic class where the
+ *         test of far services are calculate
+ */
 @ExtendWith(MockitoExtension.class)
 public class ParkingServiceTest {
 

@@ -7,6 +7,11 @@ import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.dao.TicketDAO;
 import com.parkit.parkingsystem.util.InputReaderUtil;
 
+/**
+ * @author cisse
+ *
+ *         InteractiveShell allow to communicate white the shell console
+ */
 public class InteractiveShell {
 
 	private static final Logger logger = LogManager.getLogger("InteractiveShell");

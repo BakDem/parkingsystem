@@ -24,6 +24,12 @@ import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.service.ParkingService;
 import com.parkit.parkingsystem.util.InputReaderUtil;
 
+/**
+ * @author cisse
+ *
+ *         this class ParkingDataBaseIT are the basic class where the integrate
+ *         test are implemented
+ */
 @ExtendWith(MockitoExtension.class)
 public class ParkingDataBaseIT {
 

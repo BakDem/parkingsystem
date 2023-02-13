@@ -12,6 +12,12 @@ import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.util.InputReaderUtil;
 
+/**
+ * @author cisse
+ *
+ *         ParkingService is the class where the basics parking services are
+ *         implemented.
+ */
 public class ParkingService {
 
 	private static final Logger logger = LogManager.getLogger("ParkingService");
@@ -30,6 +36,9 @@ public class ParkingService {
 		this.ticketDAO = ticketDAO;
 	}
 
+	/**
+	 * This method is how to save a vehicle when it in the parking.
+	 */
 	public void processIncomingVehicle() {
 		try {
 			ParkingSpot parkingSpot = getNextParkingNumberIfAvailable();
@@ -65,11 +74,23 @@ public class ParkingService {
 		}
 	}
 
+	/**
+	 * @return
+	 * @throws Exception
+	 * 
+	 *                   this method allow for getting a vehicle register number
+	 *                   from the user keyboard.
+	 */
 	public String getVehichleRegNumber() throws Exception {
 		System.out.println("Please type the vehicle registration number and press enter key");
 		return inputReaderUtil.readVehicleRegistrationNumber();
 	}
 
+	/**
+	 * @return
+	 * 
+	 *         this method allow for getting the next spot available in the parking.
+	 */
 	public ParkingSpot getNextParkingNumberIfAvailable() {
 		int parkingNumber = 0;
 		ParkingSpot parkingSpot = null;
@@ -89,6 +110,9 @@ public class ParkingService {
 		return parkingSpot;
 	}
 
+	/**
+	 * @return This method permits to get the type of the vehicle.
+	 */
 	private ParkingType getVehichleType() {
 		System.out.println("Please select vehicle type from menu");
 		System.out.println("1 CAR");
@@ -108,6 +132,9 @@ public class ParkingService {
 		}
 	}
 
+	/**
+	 * This method is how to process an exiting of a vehicle in the parking.
+	 */
 	public void processExitingVehicle() {
 		try {
 			String vehicleRegNumber = getVehichleRegNumber();

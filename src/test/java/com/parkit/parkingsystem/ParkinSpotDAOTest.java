@@ -20,11 +20,15 @@ import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.integration.config.DataBaseTestConfig;
 import com.parkit.parkingsystem.model.ParkingSpot;
 
+/**
+ * @author cisse this class ParkinSpotDAOTest are the basic class where the test
+ *         of parking spot data access object are calculate
+ */
 @ExtendWith(MockitoExtension.class)
 public class ParkinSpotDAOTest {
 
 	private static ParkingSpotDAO parkingSpotDAO;
-	
+
 	@Mock
 	private static DataBaseTestConfig dataBaseTestConfig;
 	@Mock
@@ -33,15 +37,15 @@ public class ParkinSpotDAOTest {
 	private static Connection connection;
 	@Mock
 	private static ResultSet resultSet;
-	
+
 	@BeforeEach
 	public void setUp() throws ClassNotFoundException, SQLException {
 		parkingSpotDAO = new ParkingSpotDAO();
 		parkingSpotDAO.dataBaseConfig = dataBaseTestConfig;
-		
+
 		when(dataBaseTestConfig.getConnection()).thenReturn(connection);
 	}
-	
+
 	@Test
 	public void getNextAvailableSpotTest() throws SQLException {
 		//GIVEN
@@ -56,18 +60,18 @@ public class ParkinSpotDAOTest {
 		assertEquals(parkingSpotDAO.getNextAvailableSpot(ParkingType.CAR), 3);
 		
 	}
-	
+
 	@Test
 	public void updateParkingTest() throws SQLException {
-		//GIVEN
+		// GIVEN
 		ParkingSpot parkingSpot = new ParkingSpot(2, ParkingType.CAR, true);
-		
-		//WHEN
+
+		// WHEN
 		when(connection.prepareStatement(DBConstants.UPDATE_PARKING_SPOT)).thenReturn(myPrepareStatement);
 		when(myPrepareStatement.executeUpdate()).thenReturn(1);
-		
-		//THEN
+
+		// THEN
 		assertEquals(parkingSpotDAO.updateParking(parkingSpot), true);
-		
+
 	}
 }
