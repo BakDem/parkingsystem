@@ -3,6 +3,7 @@ package com.parkit.parkingsystem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,7 +40,7 @@ public class ParkinSpotDAOTest {
 	private static ResultSet resultSet;
 
 	@BeforeEach
-	public void setUp() throws ClassNotFoundException, SQLException {
+	public void setUp() throws ClassNotFoundException, SQLException, IOException {
 		parkingSpotDAO = new ParkingSpotDAO();
 		parkingSpotDAO.dataBaseConfig = dataBaseTestConfig;
 
